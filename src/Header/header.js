@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 function Header() {
     const [isToggled, setIsToggled] = useState(false);
     const [userToggled, setUserToggled] = useState(false);
@@ -14,6 +16,11 @@ function Header() {
     align-items: center;
     color: white;
     background-color: black;
+
+    .logo {
+      margin: 0 1rem;
+      font-size: 2rem;
+    }
 
     .header__menulist {
         list-style: none;
@@ -93,7 +100,10 @@ function Header() {
         >
           <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
         </div>
-  
+        {/* Apple 로고 */}
+        <div className="logo">
+          <Link to="/" style={{textDecoration:"none",color:"white"}}><FontAwesomeIcon icon={faApple} /></Link>
+        </div>
         {/* User 버튼 */}
         <div
           className="user"
@@ -106,7 +116,8 @@ function Header() {
   
         {/* 메뉴 리스트 */}
         <ul className="header__menulist">
-          <li>게시판</li>
+          <li><Link to="/Board/notice" style={{textDecoration:"none",color:"white"}}>공지사항</Link></li>
+          <li><Link to="/Board/qna" style={{textDecoration:"none",color:"white"}}>묻고답하기</Link></li>
         </ul>
   
         {/* User 메뉴 리스트 */}
