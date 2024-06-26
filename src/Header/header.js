@@ -118,6 +118,7 @@ function Header() {
         <ul className="header__menulist">
           <li><Link to="/Board/notice" style={{textDecoration:"none",color:"white"}}>공지사항</Link></li>
           <li><Link to="/Board/qna" style={{textDecoration:"none",color:"white"}}>묻고답하기</Link></li>
+          <li><Link to="/Chat/chat" style={{textDecoration:"none",color:"white"}}>채팅</Link></li>
         </ul>
   
         {/* User 메뉴 리스트 */}
